@@ -43,7 +43,7 @@ class App extends Component {
     this.setState({ isLoading: true });
 
     // Sign the register
-    await contract.signRegister( { from: accounts[0] });
+    await contract.signRegister({ from: accounts[0] });
 
     // Check you signed the register to prove it worked.
     let response = await contract.checkRegister(accounts[0]);
@@ -69,33 +69,47 @@ class App extends Component {
         <Jumbotron>
           <h1>Sign the Decentralized Register</h1>
           <p>
-            Congratulations! You've launched a DApp. Now go and make this much better! And don't forget to sign the register:
+            PLease sign the register:
           </p>
           <p>
             <Button
               bsStyle="primary"
               disabled={isLoading}
               onClick={!isLoading ? this.runExample : null}
+
             >
-              {isLoading ? 'Loading...' : 'Sign Now'}
+              {isLoading ? "ís loading" : "Sign In"}
+              <a href="C:\Users\User\Attendance-Token\truffle-workshop\client\src\tokens.js"></a>
             </Button>
           </p>
         </Jumbotron>
-        <div>
-          {this.state.signed ? (
-            <div>
-              <p>
-                <strong>Vitalik thanks you for signing!</strong>
-              </p>
-              <Image src="https://beta.techcrunch.com/wp-content/uploads/2017/09/unnamed.gif" />
-            </div>
-          ) : (
+
+
+        {this.state.signed ? (
+          <div>
+            <p>
+              <strong>Vitalik thanks you for signing!</strong>
+            </p>
+            <Image src="https://beta.techcrunch.com/wp-content/uploads/2017/09/unnamed.gif" />
+          </div>
+        ) : (
             <div>
               <p>
                 You haven't signed the register yet!
               </p>
             </div>
           )}
+
+        <div>Please request a token below</div>
+        <Button
+          bsStyle="primary"
+
+
+        >
+          Request Token
+            </Button>
+
+        <div>
 
         </div>
       </div>
