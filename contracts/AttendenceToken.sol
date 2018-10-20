@@ -30,6 +30,7 @@ contract AttendenceToken is Ownable{
     
     function mint(address _signee, uint16 _tokenId) public onlyOwner() {
      // TODO implement minting process
+     
     }
     
     
